@@ -18,21 +18,25 @@ import Footer from 'components/Footer';
 import './style.scss';
 
 const App = () => (
-  <div className="app-wrapper">
-    <Helmet
-      titleTemplate="%s - React.js Boilerplate"
-      defaultTitle="React.js Boilerplate"
-    >
-      <meta name="description" content="A React.js Boilerplate application" />
-    </Helmet>
+  // <div className="app-wrapper">
+  // <Helmet
+  //   titleTemplate="lending services"
+  //   defaultTitle="lending services"
+  // >
+  //   <meta name="lending services" content="Alending services application" />
+  // </Helmet>
+  <React.Fragment>
     <Header />
-    <Switch>
+   <Switch>
       <Route exact path="/" component={HomePage} />
       <Route path="/features" component={FeaturePage} />
       <Route path="" component={NotFoundPage} />
-    </Switch>
+    </Switch> 
+
     <Footer />
-  </div>
+  </React.Fragment>
+
+  /* </div> */
 );
 
 export default App;

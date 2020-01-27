@@ -11,10 +11,17 @@
       margin-top: 0;
     }
 
+
     &.centered {
       text-align: center;
     }
   }
+
+  .card-img-top {
+    width: 70%;
+    height: 18vw;
+    object-fit: cover;
+}
 
   form {
     margin-bottom: 1em;

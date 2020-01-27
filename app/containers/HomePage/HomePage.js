@@ -9,6 +9,14 @@ import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import ReposList from 'components/ReposList';
 import './style.scss';
+import {
+  Container, Row, Col, Button, Card, CardGroup
+} from 'react-bootstrap';
+
+import Banner from '../../components/Header/images/product-img_Monitoring.png';
+import Charts from '../../components/Header/images/internet-statistics.jpg';
+// C:\work\ui\react\app\components\Header\images\internet-statistics.jpg
+import Schedulers from '../../components/Header/images/sche.png';
 
 export default class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   /**
@@ -32,37 +40,40 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
     };
 
     return (
-      <article>
-        <Helmet>
-          <title>Home Page</title>
-          <meta name="description" content="A React.js Boilerplate application homepage" />
-        </Helmet>
-        <div className="home-page">
-          <section className="centered">
-            <h2>Start your next react project in seconds</h2>
-            <p>
-              A minimal <i>React-Redux</i> boilerplate with all the best practices
-            </p>
-          </section>
-          <section>
-            <h2>Try me!</h2>
-            <form onSubmit={onSubmitForm}>
-              <label htmlFor="username">
-                Show Github repositories by
-                <span className="at-prefix">@</span>
-                <input
-                  id="username"
-                  type="text"
-                  placeholder="flexdinesh"
-                  value={username}
-                  onChange={onChangeUsername}
-                />
-              </label>
-            </form>
-            <ReposList {...reposListProps} />
-          </section>
-        </div>
-      </article>
+      <div className="home-page">
+        <CardGroup>
+          <Card style={{ width: '18rem' }}>
+            <Card.Img variant="top" src={Banner} />
+            <Card.Body>
+              <Card.Title>Microservice health check</Card.Title>
+              <Card.Text>
+      Please check the micro services health check here
+              </Card.Text>
+              <Button variant="primary">click here</Button>
+            </Card.Body>
+          </Card>
+          <Card style={{ width: '18rem' }}>
+            <Card.Img variant="top" src={Charts} />
+            <Card.Body>
+              <Card.Title>Charts.js</Card.Title>
+              <Card.Text>
+                reports and bar charts for analytics and statistics
+              </Card.Text>
+              <Button variant="primary">click here</Button>
+            </Card.Body>
+          </Card>
+          <Card style={{ width: '18rem' }}>
+            <Card.Img variant="top" src={Schedulers} />
+            <Card.Body>
+              <Card.Title>Used for scheduling jobs</Card.Title>
+              <Card.Text>
+      Please check scheduling jobs check here
+              </Card.Text>
+              <Button variant="primary">click here</Button>
+            </Card.Body>
+          </Card>
+        </CardGroup>
+      </div>
     );
   }
 }
